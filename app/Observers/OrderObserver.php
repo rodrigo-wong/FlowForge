@@ -3,6 +3,9 @@
 namespace App\Observers;
 
 use App\Models\Order;
+use App\Models\OrderEvent;
+use App\Models\User;
+use App\Notifications\OrderPlacedNotification;
 use Illuminate\Support\Facades\Log;
 
 class OrderObserver
@@ -12,7 +15,11 @@ class OrderObserver
      */
     public function created(Order $order): void
     {
-        //
+        Log::info('Order created', ['order' => $order]);
+        $order->load('customer');
+        /** @var User $customer */
+        $customer = $order->customer;
+        $customer->notify(new OrderPlacedNotification($order));
     }
 
     /**
