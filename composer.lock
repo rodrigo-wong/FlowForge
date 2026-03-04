@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "f145ba832f83ba04f2cd458a3bd1c5fb",
+    "content-hash": "e49f66af05b1945e14161f14c5f39045",
     "packages": [
         {
             "name": "bacon/bacon-qr-code",
@@ -7326,6 +7326,50 @@
                 "source": "https://github.com/laravel/sail"
             },
             "time": "2026-02-06T12:16:02+00:00"
+        },
+        {
+            "name": "michal78/laravel-sms-catcher",
+            "version": "v1.1.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/michal78/laravel-sms-catcher.git",
+                "reference": "efa2795e0311d87c8269fed6eb22abf6e993a4da"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/michal78/laravel-sms-catcher/zipball/efa2795e0311d87c8269fed6eb22abf6e993a4da",
+                "reference": "efa2795e0311d87c8269fed6eb22abf6e993a4da",
+                "shasum": ""
+            },
+            "require": {
+                "php": "^8.1"
+            },
+            "require-dev": {
+                "orchestra/testbench": "^8.0|^9.0"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "SmsCatcher\\SmsCatcherServiceProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "SmsCatcher\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "description": "A development-only inbox for inspecting Laravel SMS notifications.",
+            "support": {
+                "issues": "https://github.com/michal78/laravel-sms-catcher/issues",
+                "source": "https://github.com/michal78/laravel-sms-catcher/tree/v1.1.1"
+            },
+            "time": "2026-01-19T08:52:32+00:00"
         },
         {
             "name": "mockery/mockery",
