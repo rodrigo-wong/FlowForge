@@ -7,6 +7,7 @@ use Illuminate\Bus\Queueable;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Notifications\Messages\MailMessage;
 use Illuminate\Notifications\Notification;
+use Illuminate\Support\Facades\Log;
 
 class OrderPlacedNotification extends Notification implements ShouldQueue
 {
@@ -27,7 +28,14 @@ class OrderPlacedNotification extends Notification implements ShouldQueue
      */
     public function via(object $notifiable): array
     {
-        return ['mail'];
+        return ['mail', 'sms'];
+    }
+
+    public function toSms(object $notifiable): string
+    {
+        Log::info('SMS Sent');
+
+        return 'Order Confirmation #'.$this->id.' has been placed';
     }
 
     /**
